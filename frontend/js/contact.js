@@ -13,7 +13,7 @@ if (form) {
 
     try {
       const res = await fetch(
-        "https://vikas-portfolio-1iw3.onrender.com/api/contact",
+        "https://vikas-portfolio.onrender.com/api/contact",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -21,10 +21,19 @@ if (form) {
         }
       );
 
-      const text = await res.text(); // SAFE for HTML or JSON
+      const contentType = res.headers.get("content-type") || "";
+      const body = contentType.includes("application/json")
+        ? await res.json().catch(() => null)
+        : await res.text().catch(() => "");
 
       if (!res.ok) {
-        throw new Error(text || "Failed to submit");
+        if (body && typeof body === "object" && body.error) {
+          throw new Error(body.error);
+        }
+        if (typeof body === "string" && body.trim()) {
+          throw new Error(body.slice(0, 180));
+        }
+        throw new Error("Failed to submit");
       }
 
       statusEl.textContent = "Message sent successfully!";

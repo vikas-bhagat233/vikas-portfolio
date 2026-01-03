@@ -25,7 +25,7 @@ const projects = [
 const container = document.getElementById("projects-container");
 
 // Clear existing content (optional, but good practice)
-if (container) container.innerHTML = "https://vikas-portfolio-1iw3.onrender.com/api/contact";
+if (container) container.innerHTML = "";
 
 if (container) {
   projects.forEach(project => {

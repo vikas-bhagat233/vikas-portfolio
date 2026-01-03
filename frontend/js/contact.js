@@ -1,6 +1,11 @@
 const form = document.getElementById("contactForm");
 const statusEl = document.getElementById("status");
 
+const CONTACT_API_URL =
+  window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+    ? "http://localhost:5000/api/contact"
+    : "https://vikas-portfolio-1iw3.onrender.com/api/contact";
+
 if (form) {
   form.addEventListener("submit", async e => {
     e.preventDefault();
@@ -12,14 +17,11 @@ if (form) {
     statusEl.textContent = "Sending...";
 
     try {
-      const res = await fetch(
-        "https://vikas-portfolio.onrender.com/api/contact",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, email, message })
-        }
-      );
+      const res = await fetch(CONTACT_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message })
+      });
 
       const contentType = res.headers.get("content-type") || "";
       const body = contentType.includes("application/json")

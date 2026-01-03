@@ -1,0 +1,38 @@
+:root {
+  --primary: #2563eb;
+  --dark: #111827;
+  --light: #f9fafb;
+  --text: #374151;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.08);
+
+  --container: 1100px;
+  --gutter: 10%;
+
+  --transition: 180ms ease;
+
+  /* Dark + glass theme (default) */
+  --bg: var(--dark);
+  --fg: var(--light);
+  --muted: rgba(249, 250, 251, 0.72);
+
+  --primary-glow: rgba(37, 99, 235, 0.28);
+  --primary-focus: rgba(37, 99, 235, 0.12);
+
+  --hero-grad-start: rgba(37, 99, 235, 0.55);
+  --hero-grad-end: var(--dark);
+
+  --glass: rgba(249, 250, 251, 0.08);
+  --glass-strong: rgba(249, 250, 251, 0.12);
+  --border: rgba(249, 250, 251, 0.16);
+
+  --shadow-glass: 0 12px 34px rgba(0, 0, 0, 0.35);
+
+  --transition-fast: 140ms ease;
+  --transition-slow: 260ms ease;
+}

@@ -1,0 +1,22 @@
+<svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="g" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(210 180) rotate(55) scale(520)">
+      <stop stop-color="#2563EB" stop-opacity="0.85"/>
+      <stop offset="0.55" stop-color="#2563EB" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#111827" stop-opacity="0.95"/>
+    </radialGradient>
+    <filter id="blur" x="-50" y="-50" width="700" height="700" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+
+  <circle cx="300" cy="300" r="270" fill="url(#g)"/>
+  <g filter="url(#blur)">
+    <circle cx="210" cy="210" r="120" fill="#F9FAFB" fill-opacity="0.10"/>
+    <circle cx="420" cy="380" r="150" fill="#F9FAFB" fill-opacity="0.08"/>
+  </g>
+
+  <!-- Simple avatar mark -->
+  <circle cx="300" cy="250" r="78" fill="#F9FAFB" fill-opacity="0.85"/>
+  <path d="M160 470c36-84 118-132 140-132s104 48 140 132" stroke="#F9FAFB" stroke-opacity="0.85" stroke-width="34" stroke-linecap="round"/>
+</svg>

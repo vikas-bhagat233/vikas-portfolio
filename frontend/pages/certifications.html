@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Certifications | Vikas Bhagat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* --- CSS VARIABLES & RESET (Consistent with Index) --- */
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --primary-color: #38bdf8;
+      --secondary-color: #818cf8;
+      --text-color: #f1f5f9;
+      --text-muted: #94a3b8;
+      --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      --glass: rgba(15, 23, 42, 0.8);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    ul { list-style: none; }
+
+    /* --- LAYOUT UTILITIES --- */
+    .section {
+      padding: 8rem 2rem 5rem; /* Top padding accounts for fixed navbar */
+      max-width: 1200px;
+      margin: 0 auto;
+      min-height: 100vh;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .subtitle {
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      font-size: 1.1rem;
+    }
+
+    /* --- NAVBAR --- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 5%;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links { display: flex; gap: 2rem; }
+    
+    .nav-links a {
+      font-weight: 500;
+      color: var(--text-muted);
+      position: relative;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--primary-color); }
+
+    /* --- CERTIFICATION GRID & CARDS --- */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .cert-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-color);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Top highlight bar on cards */
+    .cert-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient);
+      opacity: 0;
+      transition: 0.3s;
+    }
+
+    .cert-card:hover::before { opacity: 1; }
+
+    .cert-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      width: fit-content;
+    }
+
+    .cert-type-badge {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 4px 10px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--primary-color);
+      width: fit-content;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .cert-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #fff;
+    }
+
+    .cert-issuer {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+    }
+
+    .cert-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary-color);
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    
+    .cert-link:hover { text-decoration: underline; }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+      .nav-links { display: none; } /* Mobile Menu would go here */
+      .section { padding-top: 6rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="../index.html" class="logo">Vikas Bhagat.</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#projects">Projects</a></li>
+    <li><a class="active" href="certifications.html">Certifications</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="section">
+  <h2>Certifications</h2>
+  <p class="subtitle">Credentials, job simulations, and continuous learning milestones.</p>
+
+  <div class="cert-grid">
+
+    <div class="cert-card">
+      <div>
+        <div class="cert-type-badge">Certification</div>
+        <div class="cert-icon"><i class="fa-solid fa-database"></i></div>
+        <h3 class="cert-title">Oracle AI Foundations Associate</h3>
+        <p class="cert-issuer">Issued by Oracle</p>
+      </div>
+      <a href="/docs/certificates/oracle-ai.pdf" class="cert-link">View Completion<i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    </div>
+
+    <div class="cert-card">
+      <div>
+        <div class="cert-type-badge">Job Simulation</div>
+        <div class="cert-icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <h3 class="cert-title">Software Engineering Simulation</h3>
+        <p class="cert-issuer">Issued by Forage (JPMorgan)</p>
+      </div>
+      <a href="/docs/certificates/forage-backend.pdf" class="cert-link">View Completion <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    </div>
+
+    <div class="cert-card">
+      <div>
+        <div class="cert-type-badge">Job Simulation</div>
+        <div class="cert-icon"><i class="fa-brands fa-react"></i></div>
+        <h3 class="cert-title">Frontend Engineering Simulation</h3>
+        <p class="cert-issuer">Issued by Forage (SkyScanner)</p>
+      </div>
+      <a href="/docs/certificates/forage-frontend.pdf" class="cert-link">View Completion <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+    </div>
+
+  </div>
+</section>
+
+<script src="../js/navbar.js"></script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact | Vikas Bhagat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* --- CSS VARIABLES & RESET --- */
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: #1e293b;
+      --primary-color: #38bdf8;
+      --secondary-color: #818cf8;
+      --text-color: #f1f5f9;
+      --text-muted: #94a3b8;
+      --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      --glass: rgba(15, 23, 42, 0.8);
+      --input-bg: rgba(255, 255, 255, 0.05);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    a { text-decoration: none; color: inherit; transition: 0.3s; }
+    ul { list-style: none; }
+
+    /* --- LAYOUT UTILITIES --- */
+    .section {
+      padding: 8rem 5% 5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      min-height: 100vh;
+      display: flex;
+      align-items: center; /* Vertically center the content */
+    }
+
+    /* --- NAVBAR --- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 5%;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: var(--glass);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links { display: flex; gap: 2rem; }
+    
+    .nav-links a {
+      font-weight: 500;
+      color: var(--text-muted);
+      position: relative;
+    }
+
+    .nav-links a:hover, .nav-links a.active { color: var(--primary-color); }
+
+    /* --- CONTACT CONTAINER --- */
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Split layout */
+      gap: 4rem;
+      width: 100%;
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 3rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+
+    /* Left Side: Text Info */
+    .contact-info h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .contact-info p {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    .info-item i {
+      color: var(--primary-color);
+      font-size: 1.2rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .social-btn {
+      width: 45px;
+      height: 45px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: 0.3s;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .social-btn:hover {
+      background: var(--primary-color);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    /* Right Side: Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .form-group { position: relative; }
+
+    input, textarea {
+      width: 100%;
+      padding: 1rem;
+      background: var(--input-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      transition: 0.3s;
+      outline: none;
+    }
+
+    input:focus, textarea:focus {
+      border-color: var(--primary-color);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    button[type="submit"] {
+      padding: 1rem 2rem;
+      background: var(--gradient);
+      border: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 0.5rem;
+    }
+
+    button[type="submit"]:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+    }
+
+    #status {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--primary-color);
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 900px) {
+      .contact-container {
+        grid-template-columns: 1fr; /* Stack vertically on mobile */
+        padding: 2rem;
+        gap: 2rem;
+      }
+      .section { padding-top: 6rem; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="../index.html" class="logo">Vikas Bhagat.</a>
+  <ul class="nav-links">
+    <li><a href="../index.html#about">About</a></li>
+    <li><a href="../index.html#projects">Projects</a></li>
+    <li><a href="certifications.html">Certifications</a></li>
+    <li><a class="active" href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="section">
+  
+  <div class="contact-container">
+    
+    <div class="contact-info">
+      <h2>Let's Chat.</h2>
+      <p>Feel free to reach out anytime.</p>
+      
+      <div class="info-item">
+        <i class="fa-solid fa-envelope"></i>
+        <span>bhagatvikas554@gmail.com</span> </div>
+      
+      <div class="info-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Kalyan, Maharashtra, India</span>
+      </div>
+
+      <div class="social-links">
+        <a href="https://github.com/vikas-bhagat233" class="social-btn"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/vikas-bhagat-3628b233b" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+       
+      </div>
+    </div>
+
+    <form id="contactForm">
+      <div class="form-group">
+        <input type="text" name="name" id="name" placeholder="Your Name" required />
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" id="email" placeholder="Your Email" required />
+      </div>
+      <div class="form-group">
+        <textarea name="message" id="message" placeholder="What's on your mind?" required></textarea>
+      </div>
+      
+      <button type="submit">Send Message</button>
+      <p id="status" aria-live="polite"></p>
+    </form>
+
+  </div>
+
+</section>
+
+<script src="../js/navbar.js"></script>
+<script src="../js/contact.js"></script>
+</body>
+</html>

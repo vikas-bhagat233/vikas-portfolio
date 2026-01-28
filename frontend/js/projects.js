@@ -14,6 +14,13 @@ const projects = [
     link: "#"
   },
   {
+  title: "Smart Contract Wallet",
+  description: "A secure multi-signature Ethereum wallet with web interface. Features multi-owner approvals, transaction management, and real-time blockchain interactions.",
+  icon: "fa-solid fa-wallet",
+  techStack: ["Solidity, ", "Hardhat, ", "Web3.js, ", "Ethereum"],
+  link: "https://github.com/vikas-bhagat233/smart-contract-wallet.git"
+},
+  {
     title: "AI Portfolio Website",
     description: "A full-stack portfolio with an integrated AI chatbot using Groq Cloud. The bot answers questions about my skills and projects in real-time.",
     icon: "fa-solid fa-robot",

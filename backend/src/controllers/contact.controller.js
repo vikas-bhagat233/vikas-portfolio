@@ -1,4 +1,8 @@
+import { randomUUID } from "crypto";
+import mongoose from "mongoose";
 import Contact from "../models/Contact.js";
+
+const localContacts = [];
 
 export const submitContact = async (req, res) => {
   try {
@@ -8,11 +12,26 @@ export const submitContact = async (req, res) => {
       return res.status(400).json({ error: "All fields are required" });
     }
 
-    const savedMessage = await Contact.create({
-      name,
-      email,
-      message
-    });
+    const isMongoReady = mongoose.connection.readyState === 1;
+    const savedMessage = isMongoReady
+      ? await Contact.create({
+          name,
+          email,
+          message
+        })
+      : (() => {
+          const entry = {
+            _id: randomUUID(),
+            name,
+            email,
+            message,
+            createdAt: new Date(),
+            updatedAt: new Date()
+          };
+
+          localContacts.push(entry);
+          return entry;
+        })();
 
     console.log("✅ Contact saved", savedMessage._id);
 

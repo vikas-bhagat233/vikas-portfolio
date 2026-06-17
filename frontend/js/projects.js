@@ -3,29 +3,57 @@ const projects = [
     title: "Pet Adoption Mobile App (DBIT)",
     description: "Developed a fully functional Android app to simplify the pet adoption process. Users can explore profiles, view details, and adopt pets seamlessly.",
     icon: "fa-solid fa-mobile-screen",
-    techStack: ["Android ,", "Java, ", "Firebase, ", "XML"],
-    link: "#" // Replace with actual GitHub link
+    techStack: ["Android", "Java", "Firebase", "XML"],
+    githubLink: "#",
+    liveLink: "#"
   },
   {
     title: "Spiritual Aura (DBIT)",
     description: "A responsive meditation website focused on mental well-being. Features motivational thoughts, a meditation timer, and guided pranayama sessions.",
     icon: "fa-solid fa-laptop-code",
-    techStack: ["HTML, ", "CSS, ", "JavaScript, ", "Firebase"],
-    link: "#"
+    techStack: ["HTML", "CSS", "JavaScript", "Firebase"],
+    githubLink: "#",
+    liveLink: "#"
   },
   {
-  title: "Smart Contract Wallet",
-  description: "A secure multi-signature Ethereum wallet with web interface. Features multi-owner approvals, transaction management, and real-time blockchain interactions.",
-  icon: "fa-solid fa-wallet",
-  techStack: ["Solidity, ", "Hardhat, ", "Web3.js, ", "Ethereum"],
-  link: "https://github.com/vikas-bhagat233/smart-contract-wallet.git"
-},
+    title: "Smart Contract Wallet",
+    description: "A secure multi-signature Ethereum wallet with web interface. Features multi-owner approvals, transaction management, and real-time blockchain interactions.",
+    icon: "fa-solid fa-wallet",
+    techStack: ["Solidity", "Hardhat", "Web3.js", "Ethereum"],
+    githubLink: "https://github.com/vikas-bhagat233/smart-contract-wallet.git",
+    liveLink: "#"
+  },
   {
     title: "AI Portfolio Website",
     description: "A full-stack portfolio with an integrated AI chatbot using Groq Cloud. The bot answers questions about my skills and projects in real-time.",
     icon: "fa-solid fa-robot",
-    techStack: ["Node.js, ", "MongoDB, ", "Groq Cloud,", "AI"],
-    link: "https://github.com/vikas-bhagat233/portfolio-chatbot.git"
+    techStack: ["Node.js", "MongoDB", "Groq Cloud", "AI"],
+    githubLink: "https://github.com/vikas-bhagat233/portfolio-chatbot.git",
+    liveLink: "#"
+  },
+  {
+    title: "FinSight Analytics Dashboard",
+    description: "A glassmorphism analytics workspace for tracking revenue, trends, and performance with animated 3D cards.",
+    icon: "fa-solid fa-chart-line",
+    techStack: ["React", "Node.js", "Charts", "MongoDB"],
+    githubLink: "#",
+    liveLink: "#"
+  },
+  {
+    title: "Creator Showcase Hub",
+    description: "A polished creator landing page with layered lighting, motion-rich sections, and modular content blocks.",
+    icon: "fa-solid fa-layer-group",
+    techStack: ["HTML", "CSS", "JavaScript"],
+    githubLink: "#",
+    liveLink: "#"
+  },
+  {
+    title: "Smart Study Planner",
+    description: "A productivity tool concept with task prioritization, notes, reminders, and a futuristic glass UI.",
+    icon: "fa-solid fa-calendar-check",
+    techStack: ["JavaScript", "API", "UI/UX"],
+    githubLink: "#",
+    liveLink: "#"
   }
 ];
 
@@ -56,8 +84,11 @@ if (container) {
         </div>
 
         <div class="card-links">
-          <a href="${project.link}" class="icon-link" target="_blank">
+          <a href="${project.githubLink || '#'}" class="icon-link" target="_blank" rel="noreferrer">
             <i class="fa-brands fa-github"></i> Source Code
+          </a>
+          <a href="${project.liveLink || '#'}" class="icon-link" target="_blank" rel="noreferrer">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo
           </a>
         </div>
       </div>
